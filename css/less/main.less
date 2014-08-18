@@ -1,0 +1,163 @@
+@import "lesshat";
+
+@font-face {
+    font-family: Bebas;
+    src: url('/font/BebasNeue.otf');
+}
+
+@font-face {
+    font-family: Tex Gyre;
+    src: url('/font/texgyreadventor-regular.otf');
+}
+
+@font-face {
+    font-family: Tex Gyre Bold;
+    src: url('/font/texgyreadventor-bold.otf');
+}
+
+html { 
+  background: #eee url('/img/bg.png'); 
+}
+
+body{
+	font-family: Tex Gyre;
+}
+
+.business-card{
+	font-family: Bebas;
+	@brandColor: #333133;
+	@brandAltColor: #bfd730;
+	.panel{
+		min-height: 600px;
+		width: 360px;
+		border: none;
+		.box-shadow(0px 0px 15px rgba(20,20,20,0.9));
+
+		.low-footer{
+			height: 32px;
+			background: @brandAltColor;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+	}
+	&#front{
+		.animate-me();
+		 -webkit-backface-visibility: hidden;
+		 -webkit-transition: translate3d(0,0,0);
+		.panel{
+			background: @brandColor;
+
+			.footer{
+				background: #ffffff;
+				color: @brandColor;
+				padding: 0;
+				height: 84px;
+				width: 100%;
+				position: absolute;
+				bottom: 32px;
+				text-align: center;
+				text-transform: uppercase;
+				font-size: 32pt;
+				span{
+					display: block;
+					font-size: 19pt;
+					margin-top: -15px;
+					color: #838487;
+					&:before{
+						content: '- ';
+					}
+					&:after{
+						content: ' -';
+					}
+				}
+			}
+		}
+	}
+	&#back{		
+		opacity: 0;
+		.animate-me();
+		-webkit-backface-visibility: hidden;
+		 -webkit-transition: translate3d(0,0,0);
+		 .panel{
+		 	.top{
+			 	height: 30px;
+			 	background: @brandAltColor;
+			 	position: absolute;
+				top: 0;
+				width: 100%;
+			}
+
+			#name{
+				padding: 125px 0 90px 0;
+				font-family: Tex Gyre Bold;
+				text-transform: uppercase;
+				text-align: center;
+				font-size: 25pt;
+				span{
+					font-family: Tex Gyre;
+					&.position{
+						display: block;
+						font-size: 12pt;
+					}
+				}
+			}
+
+			.details-container{
+				font-family: Tex Gyre;
+				position: absolute;
+				bottom: 32px;
+				width: 100%;
+				a{
+					color: #c9cbcc;
+				}
+				i{
+					color: #c9cbcc;
+				}
+				ul{
+					list-style: none;
+					padding: 0;
+					&#details{
+						li{
+							i{
+								font-size: 36px;
+								padding: 23px;
+							}
+							&#location{
+								background: @brandColor;
+								.detail-list();
+								
+							}
+							&#telephone{
+								background: lighten(@brandColor, 10%);
+								.detail-list(110px);
+							}
+							&#online{
+								background: lighten(@brandColor, 5%);
+								.detail-list(183px);
+							}
+						}
+					}
+				}
+			}
+		 }
+	}
+}
+
+.detail-list(@top:21px, @left:78px){
+	ul{
+		position: absolute;
+		top: @top;
+		left: @left;
+	}
+}
+
+.animate-me(){
+	animation-name: bounce;
+	animation-duration: 4s;
+	animation-iteration-count: 10;
+	animation-direction: alternate;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 2s;
+}

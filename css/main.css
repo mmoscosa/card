@@ -1,0 +1,151 @@
+@font-face {
+  font-family: Bebas;
+  src: url('/font/BebasNeue.otf');
+}
+@font-face {
+  font-family: Tex Gyre;
+  src: url('/font/texgyreadventor-regular.otf');
+}
+@font-face {
+  font-family: Tex Gyre Bold;
+  src: url('/font/texgyreadventor-bold.otf');
+}
+html {
+  background: #eeeeee url('/img/bg.png');
+}
+body {
+  font-family: Tex Gyre;
+}
+.business-card {
+  font-family: Bebas;
+}
+.business-card .panel {
+  min-height: 600px;
+  width: 360px;
+  border: none;
+  -webkit-box-shadow: 0px 0px 15px rgba(20, 20, 20, 0.9);
+  -moz-box-shadow: 0px 0px 15px rgba(20, 20, 20, 0.9);
+  box-shadow: 0px 0px 15px rgba(20, 20, 20, 0.9);
+}
+.business-card .panel .low-footer {
+  height: 32px;
+  background: #bfd730;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.business-card#front {
+  animation-name: bounce;
+  animation-duration: 4s;
+  animation-iteration-count: 10;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: translate3d(0, 0, 0);
+}
+.business-card#front .panel {
+  background: #333133;
+}
+.business-card#front .panel .footer {
+  background: #ffffff;
+  color: #333133;
+  padding: 0;
+  height: 84px;
+  width: 100%;
+  position: absolute;
+  bottom: 32px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 32pt;
+}
+.business-card#front .panel .footer span {
+  display: block;
+  font-size: 19pt;
+  margin-top: -15px;
+  color: #838487;
+}
+.business-card#front .panel .footer span:before {
+  content: '- ';
+}
+.business-card#front .panel .footer span:after {
+  content: ' -';
+}
+.business-card#back {
+  opacity: 0;
+  animation-name: bounce;
+  animation-duration: 4s;
+  animation-iteration-count: 10;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: translate3d(0, 0, 0);
+}
+.business-card#back .panel .top {
+  height: 30px;
+  background: #bfd730;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.business-card#back .panel #name {
+  padding: 125px 0 90px 0;
+  font-family: Tex Gyre Bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 25pt;
+}
+.business-card#back .panel #name span {
+  font-family: Tex Gyre;
+}
+.business-card#back .panel #name span.position {
+  display: block;
+  font-size: 12pt;
+}
+.business-card#back .panel .details-container {
+  font-family: Tex Gyre;
+  position: absolute;
+  bottom: 32px;
+  width: 100%;
+}
+.business-card#back .panel .details-container a {
+  color: #c9cbcc;
+}
+.business-card#back .panel .details-container i {
+  color: #c9cbcc;
+}
+.business-card#back .panel .details-container ul {
+  list-style: none;
+  padding: 0;
+}
+.business-card#back .panel .details-container ul#details li i {
+  font-size: 36px;
+  padding: 23px;
+}
+.business-card#back .panel .details-container ul#details li#location {
+  background: #333133;
+}
+.business-card#back .panel .details-container ul#details li#location ul {
+  position: absolute;
+  top: 21px;
+  left: 78px;
+}
+.business-card#back .panel .details-container ul#details li#telephone {
+  background: #4d4a4d;
+}
+.business-card#back .panel .details-container ul#details li#telephone ul {
+  position: absolute;
+  top: 110px;
+  left: 78px;
+}
+.business-card#back .panel .details-container ul#details li#online {
+  background: #403d40;
+}
+.business-card#back .panel .details-container ul#details li#online ul {
+  position: absolute;
+  top: 183px;
+  left: 78px;
+}

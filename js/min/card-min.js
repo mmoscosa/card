@@ -1,0 +1,1 @@
+$(function(){var c,t;c=$("#front"),t=$("#back"),setTimeout(function(){c.css({opacity:"0"}),t.css({opacity:"1"})},1e3)});
